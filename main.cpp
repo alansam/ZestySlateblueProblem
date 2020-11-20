@@ -60,37 +60,39 @@ int main() {
       //switch statement to enter code/instructions for program to execute based off of user input 
       switch (choice) { 
       case 1: //adding data to the file 
-        //opening the file in appending mode to add data to it 
-///        tofile.open("BookData.txt", std::ios::app); 
-///        tofile << "\n"; //new line at start to seperate different books and avoid errors 
-        //Asking the user to add new data to the file and adding a tab to keep file format consistent  
-        std::cout << "Enter the details for the new book:" << std::endl; 
-        std::cout << "ID: "; 
-        std::cin >> id;  
-///        tofile << id << "\t"; 
-        std::cout << "Title: "; 
-        std::cin.ignore();  
-        getline(std::cin, title); 
+        {
+          //opening the file in appending mode to add data to it 
+///         tofile.open("BookData.txt", std::ios::app); 
+///          tofile << "\n"; //new line at start to seperate different books and avoid errors 
+          //Asking the user to add new data to the file and adding a tab to keep file format consistent  
+          std::cout << "Enter the details for the new book:" << std::endl; 
+          std::cout << "ID: "; 
+          std::cin >> id;  
+///         tofile << id << "\t"; 
+          std::cout << "Title: "; 
+          std::cin.ignore();  
+          getline(std::cin, title); 
 ///        tofile << title << "\t"; 
-        std::cout << "First Author: "; 
-        getline(std::cin, author); 
-///        tofile << author << "\t"; 
-        std::cout << "Total-Pages: "; 
-        std::cin >> pages; 
-///        tofile << pages << "\t"; 
-        std::cout << "Quantity: "; 
-        std::cin >> quantity; 
-///        tofile << quantity << "\t"; 
-        std::cout << "Year: "; 
-        std::cin >> year; 
-///        tofile << year << "\t"; 
-        std::cout << "Price(QAR): "; 
-        std::cin >> price; 
-///        tofile << price; 
-        tofile.close(); //closing file 
-        std::cout << std::endl; //to make output on screen neater and more organised by seperating user input section from menu 
-        book bk(id, title, author, pages, year, quantity, price);
-        catalog.emplace(id, bk);
+          std::cout << "First Author: "; 
+          getline(std::cin, author); 
+///         tofile << author << "\t"; 
+          std::cout << "Total-Pages: "; 
+          std::cin >> pages; 
+///         tofile << pages << "\t"; 
+          std::cout << "Quantity: "; 
+          std::cin >> quantity; 
+///          tofile << quantity << "\t"; 
+          std::cout << "Year: "; 
+          std::cin >> year; 
+///         tofile << year << "\t"; 
+          std::cout << "Price(QAR): "; 
+          std::cin >> price; 
+///         tofile << price; 
+          tofile.close(); //closing file 
+          std::cout << std::endl; //to make output on screen neater and more organised by seperating user input section from menu 
+          book bk(id, title, author, pages, year, quantity, price);
+          catalog.emplace(id, bk);
+        }
         break; 
 
       case 2: break; 
